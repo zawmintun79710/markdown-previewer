@@ -1,7 +1,7 @@
 import './App.css'
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { marked } from 'marked'
+import { marked } from 'marked';
 
 class App extends Component {
   state = { text: `
@@ -51,11 +51,11 @@ function blockquote(){
       <div class="container-sm">
         <div class="row">
           <div class="col-6">
-              <label for="editor">Editor</label>
+              <label for="editor" className='text-left'><i class="fa-brands fa-free-code-camp"></i>Editor</label>
               <textarea class="form-control" id="editor" value={text} onChange= {(e)=> this.markdownpreview(e.target.value)}></textarea>
           </div>
           <div class="col-6">
-              <label for="preview">Previewer</label>
+              <label for="preview"><i class="fa-brands fa-free-code-camp"></i>Previewer</label>
               <div class="form-control" id="preview" dangerouslySetInnerHTML={{__html: marked(text)}}></div>
           </div>
       </div>

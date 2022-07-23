@@ -46,8 +46,13 @@
 .form-control{
   height: 500px;
   box-shadow: 1px 1px 20px 3px #F2F3F4 inset;
+  
 }
 
 label{
   font-size: 30px;
+}
+
+.col-6{
+  background-color: #c6d0ca;
 }
