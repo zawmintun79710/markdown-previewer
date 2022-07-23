@@ -1,7 +1,6 @@
 import './App.css'
 import React, { Component } from 'react';
-import 'react-bootstrap'
-import { FormGroup, FormLabel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 import { marked } from 'marked'
 
 class App extends Component {
@@ -49,17 +48,18 @@ function blockquote(){
     console.log(text);
   return (
     <div className="App">
-      <h1 className='text-white bg-secondary text-center'>Markdown Previewer</h1>
-      <FormGroup className='row'>
-        <FormGroup className='col-6'>
-          <FormLabel className='form-control mb-0'>Editor</FormLabel>
-          <textarea className='form-control' id='editor' rows="29" value={text} onChange= {(e)=> this.markdownpreview(e.target.value)}></textarea>
-        </FormGroup>
-        <FormGroup className='col-6'>
-          <FormLabel className='form-control mb-0'>Previewer</FormLabel>
-          <div className='bg-success text-white text-left' id='preview' dangerouslySetInnerHTML={{__html: marked(text)}}></div>
-        </FormGroup>
-      </FormGroup>
+      <div class="container-sm">
+        <div class="row">
+          <div class="col-6">
+              <label for="editor">Editor</label>
+              <textarea class="form-control" id="editor" value={text} onChange= {(e)=> this.markdownpreview(e.target.value)}></textarea>
+          </div>
+          <div class="col-6">
+              <label for="preview">Previewer</label>
+              <div class="form-control" id="preview" dangerouslySetInnerHTML={{__html: marked(text)}}></div>
+          </div>
+      </div>
+    </div>
     </div>
   );
   }
